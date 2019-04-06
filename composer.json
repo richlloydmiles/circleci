@@ -1,0 +1,17 @@
+{
+  "name": "richlloydmiles/ci-for-wp",
+  "authors": [
+    {
+      "name": "Richard Miles",
+      "email": "richlloydmiles@gmail.com"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "scripts": {
+    "test": [
+      "phpunit tests/*.php"
+    ]
+  }
+}

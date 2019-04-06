@@ -1,0 +1,24 @@
+version: 2
+
+# Jobs 
+base: &base
+  docker:
+  - image: circleci/php:7.1-node-browsers
+
+tests: &tests
+  command: |
+    composer install
+    composer test
+
+jobs:
+  build-and-test:
+    <<: *base
+    steps:
+    - checkout
+    - run: *tests
+
+workflows:
+  version: 2
+  build:
+    jobs:
+    - build-and-test
