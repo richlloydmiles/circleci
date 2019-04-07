@@ -14,11 +14,16 @@ lint: &lint
   command: |
     composer lint
     
+setup: &setup
+  command: |
+    printenv >> ".env"
+    
 jobs:
   build-and-test:
     <<: *base
     steps:
     - checkout
+    - run: *setup
     - run: *tests
     - run: *lint
 
