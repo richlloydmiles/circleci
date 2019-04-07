@@ -21,7 +21,7 @@ class CurrencyConverter
 
             $dotenv = Dotenv::create(__DIR__);
             $dotenv->load();
-            self::$apiKey = $_ENV('FIXER_API_KEY');
+            self::$apiKey = getenv('FIXER_API_KEY');
             self::$currencies = [
             'USD' => Currency::USD,
             'EUR' => Currency::EUR,
