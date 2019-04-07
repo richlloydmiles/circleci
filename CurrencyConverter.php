@@ -20,8 +20,8 @@ class CurrencyConverter
             self::$exchange = new Exchange();
 
             $dotenv = Dotenv::create(__DIR__);
-            if(getenv('ENV') === 'DEV') {
-              $dotenv->load();
+            if (getenv('ENV') === 'DEV') {
+                $dotenv->load();
             }
             
             self::$apiKey = getenv('FIXER_API_KEY');
