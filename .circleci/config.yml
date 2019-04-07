@@ -10,12 +10,17 @@ tests: &tests
     composer install
     composer test
 
+lint: &lint
+  command: |
+    composer lint
+    
 jobs:
   build-and-test:
     <<: *base
     steps:
     - checkout
     - run: *tests
+    - run: *lint
 
 workflows:
   version: 2
@@ -25,4 +30,4 @@ workflows:
         filters:
           branches:
             only:
-            - develop
+            - master
