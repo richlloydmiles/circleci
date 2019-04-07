@@ -16,7 +16,7 @@ lint: &lint
     
 setup: &setup
   command: |
-    printenv >> ".env"
+    env >> .env
     
 jobs:
   build-and-test:
