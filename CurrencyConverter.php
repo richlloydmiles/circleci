@@ -20,7 +20,7 @@ class CurrencyConverter
             self::$exchange = new Exchange();
 
             $dotenv = Dotenv::create(__DIR__);
-            if (getenv('ENV') === 'DEV') {
+            if (file_exists('.env')) {
                 $dotenv->load();
             }
             
