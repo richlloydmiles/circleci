@@ -14,16 +14,11 @@ lint: &lint
   command: |
     composer lint
     
-setup: &setup
-  command: |
-    touch .env
-    
 jobs:
   build-and-test:
     <<: *base
     steps:
     - checkout
-    - run: *setup
     - run: *tests
     - run: *lint
 
